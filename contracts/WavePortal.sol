@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -25,7 +25,7 @@ contract WavePortal {
     mapping(address => uint256) public lastWavedAt;
     
     constructor() payable {
-        console.log("Yo yo, I am a contract and I am smart");
+        console.log(" I am a smart contract ");
 
         seed = (block.timestamp + block.difficulty) % 100;
     }
@@ -33,7 +33,7 @@ contract WavePortal {
    function wave(string memory _message) public {
     require(
             lastWavedAt[msg.sender] + 30 seconds < block.timestamp,
-            "Wait 15m"
+            "Wait 30 seconds"
         );
 
         lastWavedAt[msg.sender] = block.timestamp;
